@@ -269,6 +269,8 @@ public class ticTacToe {
             System.out.print("\033[H\033[2J"); System.out.flush();
             System.out.println("Congratulations! You won! Run the program again to play once more.");
             System.out.println(playerWin(ticTacToeSampleBoard));
+            userXPosScanner.close();
+            userYPosScanner.close();
             return;
         }
 
@@ -276,8 +278,13 @@ public class ticTacToe {
             System.out.print("\033[H\033[2J"); System.out.flush();
             System.out.println("You lost to the computer! Run the program again to play once more.");
             System.out.println(playerWin(ticTacToeSampleBoard));
+            userXPosScanner.close();
+            userYPosScanner.close();
             return;
         }
+
+        userXPosScanner.close();
+        userYPosScanner.close();
     }
 }
 
