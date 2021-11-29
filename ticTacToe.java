@@ -1,9 +1,9 @@
-package ticTacToe;
+package TicTacToe;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class ticTacToe {
+public class TicTacToe {
     public static boolean isInteger(String x) {
         try {
             Integer.parseInt(x);
