@@ -101,25 +101,6 @@ public class ticTacToe {
         Scanner userXPosScanner = new Scanner(System.in);
         Scanner userYPosScanner = new Scanner(System.in);
 
-        /*
-        First row X
-        First row O
-        Second row X
-        Second row O
-        Third row X
-        Third row O
-
-        First column X
-        First column O
-        Second column X
-        Second column O
-        Third column X
-        Third column O
-
-        Top right to bottom left diagonal
-        Top left to bottom right diagonal
-        */
-
         while (
             /* First row X and O */
             ((ticTacToeSampleBoard[0][0] != 'X') && (ticTacToeSampleBoard[0][1] != 'X') && (ticTacToeSampleBoard[0][2] != 'X'))
@@ -228,36 +209,6 @@ public class ticTacToe {
 
             ticTacToeSampleBoard[CompYPos][CompXPos] = 'O';
 
-            // if (CompXPos == userXPos) {
-            //     while (CompXPos != userXPos) {
-            //         CompXPos = rand.nextInt(3);
-            //     }
-            // }
-
-            // if (CompXPos == compLastXPos) {
-            //     while (CompXPos != compLastXPos) {
-            //         CompXPos = rand.nextInt(3);
-            //     }
-            // }
-
-            // compLastXPos = CompXPos;
-
-            // if (CompYPos == userYPos) {
-            //     while (CompYPos != userYPos) {
-            //         CompYPos = rand.nextInt(3);
-            //     }
-            // }
-
-            // if (CompYPos == compLastYPos) {
-            //     while (CompYPos != compLastYPos) {
-            //         CompYPos = rand.nextInt(3);
-            //     }
-            // }
-
-            // compLastYPos = CompYPos;
-
-            // ticTacToeSampleBoard[CompYPos][CompXPos] = 'O';
-
             if (playerWin(ticTacToeSampleBoard) == true || computerWin(ticTacToeSampleBoard) == true) {
                 break;
             } else {
@@ -268,7 +219,6 @@ public class ticTacToe {
         if (playerWin(ticTacToeSampleBoard) == true) {
             System.out.print("\033[H\033[2J"); System.out.flush();
             System.out.println("Congratulations! You won! Run the program again to play once more.");
-            System.out.println(playerWin(ticTacToeSampleBoard));
             userXPosScanner.close();
             userYPosScanner.close();
             return;
@@ -276,8 +226,8 @@ public class ticTacToe {
 
         if (playerWin(ticTacToeSampleBoard) == false) {
             System.out.print("\033[H\033[2J"); System.out.flush();
+            printBoard(ticTacToeSampleBoard);
             System.out.println("You lost to the computer! Run the program again to play once more.");
-            System.out.println(playerWin(ticTacToeSampleBoard));
             userXPosScanner.close();
             userYPosScanner.close();
             return;
@@ -287,29 +237,3 @@ public class ticTacToe {
         userYPosScanner.close();
     }
 }
-
-
-
-// /* First row O */
-// ((ticTacToeSampleBoard[0][0] == 'O') && (ticTacToeSampleBoard[0][1] == 'O') && (ticTacToeSampleBoard[0][2] == 'O'))
-// 
-// /* Second row O */
-// || ((ticTacToeSampleBoard[1][0] == 'O') && (ticTacToeSampleBoard[1][1] == 'O') && (ticTacToeSampleBoard[1][2] == 'O'))
-// 
-// /* Third row O */
-// || ((ticTacToeSampleBoard[2][0] == 'O') && (ticTacToeSampleBoard[2][1] == 'O') && (ticTacToeSampleBoard[2][2] == 'O'))
-// 
-// /* First column O */
-// || ((ticTacToeSampleBoard[0][0] == 'O') && (ticTacToeSampleBoard[1][0] == 'O') && (ticTacToeSampleBoard[2][0] == 'O'))
-// 
-// /* Second column O */
-// || ((ticTacToeSampleBoard[0][1] == 'O') && (ticTacToeSampleBoard[1][1] == 'O') && (ticTacToeSampleBoard[2][1] == 'O'))
-// 
-// /* Third column O */
-// || ((ticTacToeSampleBoard[0][2] == 'O') && (ticTacToeSampleBoard[1][2] == 'O') && (ticTacToeSampleBoard[2][2] == 'O'))
-// 
-// /* Top right to bottom left diagonal O */
-// || ((ticTacToeSampleBoard[0][2] == 'O') && (ticTacToeSampleBoard[1][1] == 'O') && (ticTacToeSampleBoard[2][0] == 'O'))
-// 
-// /* Top left to bottom right diagonal O*/
-// || ((ticTacToeSampleBoard[0][0] == 'O') && (ticTacToeSampleBoard[1][1] == 'O') && (ticTacToeSampleBoard[2][2] == 'O'))
